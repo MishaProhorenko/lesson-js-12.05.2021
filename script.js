@@ -121,3 +121,51 @@ const ironCaput = new BattleRobotBuilder()
     .setBackArmor(132)
     .build()
 console.log(ironCaput);
+
+
+// class Post
+// maxSimbols:Number
+// content: String
+// isPremium:Boolean
+// isConnected:Object
+
+// class PostBuilder
+
+class Post {
+    constructor(maxSimbols, content, isPremium, isConnected) {
+        this.maxSimbols = maxSimbols;
+        this.content = content;
+        this.isPremium = isPremium;
+        this.isConnected = isConnected;
+    }
+};
+
+class PostBuilder {
+    setMaxSimbols(value) {
+        this.maxSimbols = value;
+        return this;
+    }
+
+    setContent(value) {
+        this.content = value;
+        return this;
+    }
+    setIsPremium(value) {
+        this.isPremium = value;
+        return this;
+    }
+    setIsConnected(value) {
+        this.isConnected = value;
+        return this;
+    }
+    build() {
+        return new Post(this.maxSimbols, this.content, this.isPremium, this.isConnected)
+    }
+}
+
+const a = new PostBuilder()
+    .setMaxSimbols(22)
+    .setContent('asdasfasf')
+    .setIsPremium(true)
+    .setIsConnected({b:10})
+    console.log(a)
